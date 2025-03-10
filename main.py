@@ -13,3 +13,9 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+from flask import send_from_directory
+import os
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
