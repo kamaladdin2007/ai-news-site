@@ -12,10 +12,4 @@ def index():
     return render_template("index.html", news_list=news_list)
 
 if __name__ == "__main__":
-    app.run(debug=True)
-from flask import send_from_directory
-import os
-
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
+    app.run(host="0.0.0.0", port=5000)
