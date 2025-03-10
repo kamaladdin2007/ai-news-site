@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
-def home():
+def index():
     news_list = [
         "AI теперь умеет писать стихи!",
         "Вышла новая версия ChatGPT.",
@@ -12,4 +12,4 @@ def home():
     return render_template("index.html", news_list=news_list)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(debug=True)
